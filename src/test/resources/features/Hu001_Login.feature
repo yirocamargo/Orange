@@ -17,4 +17,4 @@
        When diligencie name <name> middl<middleName> y apellido <lastName>
        Examples:
          | user  | pass     | name | middleName | lastName |
-         | Admin | admin123 | Yiro | Enrique    | Camargo  |
+         | Admin | admin123 | Emma | Valentina  | Cammargo |

@@ -8,6 +8,8 @@ import Orange.Steps.Connection;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
+import java.sql.SQLException;
+
 public class DefinitionsSteps {
 
     private WebDriver driver;
@@ -36,7 +38,7 @@ public class DefinitionsSteps {
     }
 
     @When("^diligencie name (.*) middl(.*) y apellido (.*)")
-    public void dilenciarEmployee(String name, String middleName, String lastName){
+    public void dilenciarEmployee(String name, String middleName, String lastName) throws SQLException {
         this.pimPage = new PimPage(driver);
         this.pimPage.diligenciarEmployee(name, middleName, lastName);
     }
