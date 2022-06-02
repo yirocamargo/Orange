@@ -24,30 +24,37 @@ public class ButtonPages {
 	@FindBy(how = How.ID, using = "btnSave")
 	private WebElement btnSave;
 
+	@FindBy(how = How.ID, using = "menu_admin_viewAdminModule")
+	private WebElement btnAdmin;
+
+	@FindBy(how = How.ID, using = "btnAdd")
+	private WebElement btnAdd;
+
 	public ButtonPages(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 		this.questions = new Questions(driver);
 	}
 
-
 	public void btnLogIn() {
 		btnLogIn.isDisplayed();
 		btnLogIn.click();
 	}
-
 	public void btnPim() {
 		btnPim.click();
 	}
-
 	public void btnAddEmployee() {
 		btnAddEmployee.click();
 	}
-
 	public void btnSave() {
 		btnSave.click();
 	}
-
+	public void btnAdmin() {
+		btnAdmin.click();
+	}
+	public void btnAdd() {
+		btnAdd.click();
+	}
 
 
 }
