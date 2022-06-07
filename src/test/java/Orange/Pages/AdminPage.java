@@ -34,10 +34,11 @@ public class AdminPage {
         buttonPages.btnAdd();
     }
 
-    public void diligenciarAddUser(String employeeName,String userName,String password,String confirmPassword){
-        txtEmployeeName.sendKeys();
-        txtUserName.sendKeys();
-        txtPassword.sendKeys();
-        txtConfirmPassword.sendKeys();
+    public void diligenciarAddUser(String useRole,String employeeName,String userName,String password,String confirmPassword){
+        buttonPages.btnlistUse(useRole);
+        txtEmployeeName.sendKeys(employeeName);
+        txtUserName.sendKeys(userName);
+        txtPassword.sendKeys(password);
+        txtConfirmPassword.sendKeys(confirmPassword);
     }
 }

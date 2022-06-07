@@ -7,6 +7,7 @@ Scenario Outline: agregar usuario administrador
 Given open browser
   And diligenciar user <user> and contraseña <pass>
   And llegar a agregar un usuario
+  When diligencie el nombre de la hoja <sheetName> y numero de columna <rowNumber>
   Examples:
-    | user  | pass     |
-    | Admin | admin123 |
+    | user  | pass     | sheetName   | rowNumber |
+    | Admin | admin123 | RegTestData | 0         |

@@ -1,5 +1,6 @@
 package Orange.Steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,6 +55,10 @@ public class ButtonPages {
 	}
 	public void btnAdd() {
 		btnAdd.click();
+	}
+	public void btnlistUse(String useRole) {
+		WebElement btnList = driver.findElement(By.xpath("//select//option[text()='"+useRole+"']"));
+		btnList.click();
 	}
 
 
