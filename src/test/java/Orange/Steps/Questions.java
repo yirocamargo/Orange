@@ -12,7 +12,7 @@ public class Questions {
 
 	private WebDriver driver;
 
-	public Questions(WebDriver driver) {
+    public Questions(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
@@ -36,7 +36,7 @@ public class Questions {
 
 	@Step
 	public void tiempoSegundos(int seconds) {
-		try {
+        try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

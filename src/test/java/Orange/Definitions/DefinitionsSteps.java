@@ -2,6 +2,7 @@ package Orange.Definitions;
 
 import Orange.Pages.LoginPage;
 import Orange.Pages.PimPage;
+import Orange.Pages.DirectoryPage;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import Orange.Steps.Connection;
@@ -14,13 +15,12 @@ public class DefinitionsSteps {
     private Connection conexion = new Connection();
     private LoginPage loginPage;
     private PimPage pimPage;
+    private DirectoryPage directoryPage;
 
     @Given("^open browser$")
-    public void open_browser() {
-
+    public void open_browser() throws Exception {
         this.conexion = new Connection();
         this.driver = this.conexion.abrirNavegador();
-
     }
 
     @And("^diligenciar user (.*) and contraseña (.*)")
@@ -35,9 +35,29 @@ public class DefinitionsSteps {
         this.pimPage.llegarAddEmployee();
     }
 
-    @When("^diligencie name (.*) middl(.*) y apellido (.*)")
-    public void dilenciarEmployee(String name, String middleName, String lastName){
+    @And("^diligencie name (.*) y apellido (.*) rutaFoto (.*)" )
+    public void dilenciarEmployee(String name, String lastName, String rutaFoto){
         this.pimPage = new PimPage(driver);
-        this.pimPage.diligenciarEmployee(name, middleName, lastName);
+        this.pimPage.diligenciarEmployee(name, lastName, rutaFoto);
     }
+
+    @And("^llegar a la opcion directory")
+    public void llegarDirectory(){
+        this.directoryPage = new DirectoryPage(driver);
+        this.directoryPage.llegarDirectory();
+    }
+
+    @And("^busqueda name (.*) y apellido (.*)")
+    public void busquedaDirectory(String name, String lastName){
+        this.directoryPage = new DirectoryPage(driver);
+        this.directoryPage.busquedaDirectory(name, lastName);
+    }
+
+    @When("^validar info name (.*) y apellido (.*)")
+    public void validarInfoBasicaEmpleado(String name, String lastName){
+        this.directoryPage = new DirectoryPage(driver);
+        this.directoryPage.validarInfoBasicaEmpleado(name, lastName);
+    }
+
+
 }

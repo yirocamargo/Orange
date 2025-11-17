@@ -1,5 +1,5 @@
    @Regresion
-   Feature: infreso a la pagina
+   Feature: ingreso a la pagina
 
      @Login
      Scenario Outline: login credenciales exitosas
@@ -14,7 +14,11 @@
        Given open browser
        And diligenciar user <user> and contraseña <pass>
        And llegar a la opcion agregar empleados
-       When diligencie name <name> middl<middleName> y apellido <lastName>
+       And diligencie name <name> y apellido <lastName> rutaFoto <rutaFoto>
+       And llegar a la opcion directory
+       And busqueda name <name> y apellido <lastName>
+       When validar info name <name> y apellido <lastName>
        Examples:
-         | user  | pass     | name | middleName | lastName |
-         | Admin | admin123 | Yiro | Enrique    | Camargo  |
+         | user  | pass     | name    | lastName  | rutaFoto |
+         | Admin | admin123 | Yiro2    | Camargo1  | C:\Proyectos Automatizacion\OrangeHrm\src\test\java\Orange\Fhoto\Foto.jpg |
+

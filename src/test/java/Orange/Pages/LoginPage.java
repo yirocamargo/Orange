@@ -1,5 +1,4 @@
 package Orange.Pages;
-
 import Orange.Steps.ButtonPages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    @FindBy(how = How.ID, using = "txtUsername")
+    @FindBy(how = How.NAME, using = "username")
     private WebElement txtUser;
 
-    @FindBy(how = How.ID, using = "txtPassword")
+    @FindBy(how = How.NAME, using = "password")
     private WebElement txtPass;
     private ButtonPages buttonPages;
 
@@ -21,6 +20,7 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
         this.buttonPages = new ButtonPages(driver);
     }
+
 
     public void diligenciarLogin(String user, String pass){
         txtUser.sendKeys(user);
